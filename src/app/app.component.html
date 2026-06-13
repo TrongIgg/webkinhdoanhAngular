@@ -1,0 +1,77 @@
+﻿<header class="site-header">
+  <a class="brand" href="#home" aria-label="Web Kinh Doanh">
+    <img src="assets/image/logo/logo.jpg" alt="Logo Web Kinh Doanh">
+    <span>Web Kinh Doanh</span>
+  </a>
+
+  <nav aria-label="Điều hướng chính">
+    <a href="#products">Sản phẩm</a>
+    <a href="#workshops">Workshop</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero-section">
+    <div class="hero-copy">
+      <p class="eyebrow">Gốm thủ công và trải nghiệm sáng tạo</p>
+      <h1>Không gian mua sắm và đặt workshop gốm cho khách hàng yêu đồ thủ công.</h1>
+      <p class="hero-text">
+        Phiên bản Angular sạch để triển khai Vercel: cấu trúc gọn, assets rõ ràng và sẵn sàng mở rộng thành website kinh doanh hoàn chỉnh.
+      </p>
+      <div class="hero-actions">
+        <a class="primary-action" href="#products">Xem sản phẩm</a>
+        <a class="secondary-action" href="#workshops">Đặt workshop</a>
+      </div>
+    </div>
+
+    <div class="hero-media" aria-label="Sản phẩm gốm nổi bật">
+      <img src="assets/image/workshop/workshop_20_aVXIc03K.jpg" alt="Không gian workshop gốm">
+    </div>
+  </section>
+
+  <section class="section-band" id="products">
+    <div class="section-heading">
+      <p class="eyebrow">Cửa hàng</p>
+      <h2>Sản phẩm nổi bật</h2>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-card" *ngFor="let product of products">
+        <div class="product-image">
+          <img [src]="product.image" [alt]="product.title">
+          <span>{{ product.tag }}</span>
+        </div>
+        <div class="product-body">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-band muted" id="workshops">
+    <div class="section-heading">
+      <p class="eyebrow">Trải nghiệm</p>
+      <h2>Workshop gốm</h2>
+    </div>
+
+    <div class="workshop-list">
+      <article class="workshop-card" *ngFor="let workshop of workshops">
+        <img [src]="workshop.image" [alt]="workshop.title">
+        <div>
+          <h3>{{ workshop.title }}</h3>
+          <p>{{ workshop.schedule }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div>
+      <p class="eyebrow">Sẵn sàng deploy</p>
+      <h2>Kết nối repo này với Vercel và chọn Angular là framework.</h2>
+    </div>
+    <a class="primary-action" href="mailto:hello@example.com">Liên hệ</a>
+  </section>
+</main>
